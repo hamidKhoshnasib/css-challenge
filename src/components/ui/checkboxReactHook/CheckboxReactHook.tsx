@@ -10,10 +10,10 @@ interface CheckboxReactHookProps<T extends FieldValues> {
 }
 
 function CheckboxReactHook<T extends FieldValues>({
-                                                 name,
-                                                 label,
-                                                 onValueChange,
-                                             }: CheckboxReactHookProps<T>) {
+                                                      name,
+                                                      label,
+                                                      onValueChange,
+                                                  }: CheckboxReactHookProps<T>) {
     const {control} = useFormContext<T>()
 
     return (

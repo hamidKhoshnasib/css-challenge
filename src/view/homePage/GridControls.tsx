@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
+import React, {useEffect} from 'react'
+import {FormProvider, useForm} from 'react-hook-form'
 import {useSelectionGrid} from "@/context/SelectionGridContext";
 import {CheckboxReactHook} from "@/components/ui";
 
@@ -10,8 +10,8 @@ interface GridControlsProps {
     onValueChange?: (name: string, value: boolean) => void
 }
 
-function GridControls({ checkboxNames, onValueChange }: GridControlsProps) {
-    const { values } = useSelectionGrid();
+function GridControls({checkboxNames, onValueChange}: GridControlsProps) {
+    const {values} = useSelectionGrid();
 
     const methods = useForm({
         defaultValues: values
@@ -24,7 +24,7 @@ function GridControls({ checkboxNames, onValueChange }: GridControlsProps) {
     return (
         <FormProvider {...methods}>
             <form className="w-48 px-4 border-l">
-                {checkboxNames.map((name,index) => (
+                {checkboxNames.map((name, index) => (
                     <div key={index}>
                         <CheckboxReactHook
                             name={name}
